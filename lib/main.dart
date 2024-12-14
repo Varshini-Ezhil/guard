@@ -10,7 +10,7 @@ import 'pages/soil_analysis_page.dart';
 import 'dart:convert';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter_blue/flutter_blue.dart';
+// import 'package:flutter_blue/flutter_blue.dart';
 
 
 
@@ -689,13 +689,13 @@ class AvailableBluetoothDevicesPage extends StatefulWidget {
 }
 
 class _AvailableBluetoothDevicesPageState extends State<AvailableBluetoothDevicesPage> {
-  FlutterBlue flutterBlue = FlutterBlue.instance;
-  List<ScanResult> scanResults = [];
+  // FlutterBlue flutterBlue = FlutterBlue.instance;
+  // List<ScanResult> scanResults = [];
 
   @override
   void initState() {
     super.initState();
-    _startScan();
+    // _startScan();
   }
 
   void _startScan() {
