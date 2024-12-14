@@ -82,7 +82,7 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text('settings'.tr(), style: TextStyle(color: Colors.white)),
+        title:  Text('settings'.tr(), style: const TextStyle(color: Colors.white)),
         backgroundColor: kPrimaryGreen,
         elevation: 0,
       ),
@@ -102,10 +102,10 @@ class _SettingsPageState extends State<SettingsPage> {
           children: [
             // Account Section
              Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+              padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
               child: Text(
                 'accountSettings'.tr(),
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
@@ -122,15 +122,15 @@ class _SettingsPageState extends State<SettingsPage> {
                   isDarkMode = value;
                 });
               },
-              secondary: Icon(Icons.dark_mode),
+              secondary: const Icon(Icons.dark_mode),
             ),
             const Divider(),
 
             // Version
              ListTile(
-              leading: Icon(Icons.info),
+              leading: const Icon(Icons.info),
               title: Text('version'.tr()),
-              subtitle: Text('1.0.0'),
+              subtitle: const Text('1.0.0'),
             ),
             const Divider(),
 
@@ -169,7 +169,7 @@ class _SettingsPageState extends State<SettingsPage> {
               leading: const Icon(Icons.delete_forever, color: Colors.red),
               title:  Text(
                 'deleteAccount'.tr(),
-                style: TextStyle(color: Colors.red),
+                style: const TextStyle(color: Colors.red),
               ),
               onTap: () {
                 showDialog(
@@ -189,7 +189,7 @@ class _SettingsPageState extends State<SettingsPage> {
                           Navigator.pop(context);
                         },
                         child: Text('delete'.tr(),
-                            style: TextStyle(color: Colors.red)),
+                            style: const TextStyle(color: Colors.red)),
                       ),
                     ],
                   ),
@@ -205,7 +205,7 @@ class _SettingsPageState extends State<SettingsPage> {
               child: ListTile(
                 leading: const Icon(Icons.help_outline, color: kPrimaryGreen),
                 title: Text('helpAndSupport'.tr(),
-                    style: TextStyle(fontWeight: FontWeight.w500)),
+                    style: const TextStyle(fontWeight: FontWeight.w500)),
                 trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {
                   Navigator.push(

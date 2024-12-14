@@ -49,5 +49,11 @@
 	<string>Need camera access to take soil pictures</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Need gallery access to pick soil pictures</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Need BLE permission for detecting nutrients</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Need BLE permission for detecting nutrients</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Need location permission for BLE scanning</string>
 </dict>
 </plist>

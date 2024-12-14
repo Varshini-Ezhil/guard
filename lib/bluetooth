@@ -1,0 +1,68 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_blue/flutter_blue.dart';
+
+class AvailableBluetoothDevicesPage extends StatefulWidget {
+  const AvailableBluetoothDevicesPage({super.key});
+
+  @override
+  State<AvailableBluetoothDevicesPage> createState() => _AvailableBluetoothDevicesPageState();
+}
+
+class _AvailableBluetoothDevicesPageState extends State<AvailableBluetoothDevicesPage> {
+  FlutterBlue flutterBlue = FlutterBlue.instance;
+  List<ScanResult> scanResults = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _startScan();
+  }
+
+  void _startScan() {
+    // Start scanning
+    flutterBlue.startScan(timeout: const Duration(seconds: 5));
+
+    // Listen to scan results
+    flutterBlue.scanResults.listen((results) {
+      setState(() {
+        scanResults = results;
+      });
+    });
+
+    // Stop scanning after timeout
+    Future.delayed(const Duration(seconds: 5), () {
+      flutterBlue.stopScan();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Available Bluetooth Devices'),
+        backgroundColor: Colors.blue,
+      ),
+      body: ListView.builder(
+        itemCount: scanResults.length,
+        itemBuilder: (context, index) {
+          final device = scanResults[index].device;
+          return ListTile(
+            title: Text(device.name.isNotEmpty ? device.name : 'Unknown Device'),
+            subtitle: Text(device.id.toString()),
+            onTap: () {
+              // Handle device selection
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Selected ${device.name}')),
+              );
+            },
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _startScan,
+        child: const Icon(Icons.refresh),
+        backgroundColor: Colors.blue,
+      ),
+    );
+  }
+}

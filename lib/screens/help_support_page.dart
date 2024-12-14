@@ -40,7 +40,7 @@ class HelpSupportPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title:
-            const Text('Help & Support', style: TextStyle(color: Colors.white)),
+            Text('helpAndSupport'.tr(), style: const TextStyle(color: Colors.white)),
         backgroundColor: kPrimaryGreen,
         elevation: 0,
       ),
@@ -68,21 +68,21 @@ class HelpSupportPage extends StatelessWidget {
                   children: [
                     Container(
                       padding: const EdgeInsets.all(16),
-                      child: const Column(
+                      child:  Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Contact Us',
-                            style: TextStyle(
+                            'contactUs'.tr(),
+                            style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                               color: kPrimaryGreen,
                             ),
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           Text(
-                            'We\'re here to help! Reach out to us through any of the following channels:',
-                            style: TextStyle(
+                            'contactUsDesc'.tr(),
+                            style: const TextStyle(
                               fontSize: 14,
                               color: Colors.grey,
                             ),
@@ -93,9 +93,9 @@ class HelpSupportPage extends StatelessWidget {
                     const Divider(height: 1),
                     ListTile(
                       leading: const Icon(Icons.email, color: kPrimaryGreen),
-                      title: const Text(
-                        'Email Support',
-                        style: TextStyle(fontWeight: FontWeight.w500),
+                      title:  Text(
+                        'emailSupport'.tr(),
+                        style: const TextStyle(fontWeight: FontWeight.w500),
                       ),
                       subtitle: const Text('support@fertilefuture.com'),
                       onTap: _launchEmail,
@@ -103,11 +103,11 @@ class HelpSupportPage extends StatelessWidget {
                     const Divider(height: 1),
                     ListTile(
                       leading: const Icon(Icons.phone, color: kPrimaryGreen),
-                      title: const Text(
-                        'Call Us',
-                        style: TextStyle(fontWeight: FontWeight.w500),
+                      title:  Text(
+                        'callUs'.tr(),
+                        style: const TextStyle(fontWeight: FontWeight.w500),
                       ),
-                      subtitle: const Text('Monday to Friday, 9 AM - 6 PM'),
+                      subtitle:  Text('officeHours'.tr()),
                       trailing: ElevatedButton(
                         onPressed: () => _launchPhone('+1234567890'),
                         style: ElevatedButton.styleFrom(
@@ -116,19 +116,19 @@ class HelpSupportPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                           ),
                         ),
-                        child: const Text('Call Now'),
+                        child:  Text('callNow'.tr()),
                       ),
                     ),
                     const Divider(height: 1),
-                    const ListTile(
+                    ListTile(
                       leading:
-                          Icon(Icons.location_on, color: kPrimaryGreen),
+                          const Icon(Icons.location_on, color: kPrimaryGreen),
                       title: Text(
-                        'Office Address',
-                        style: TextStyle(fontWeight: FontWeight.w500),
+                        'officeAddress'.tr(),
+                        style: const TextStyle(fontWeight: FontWeight.w500),
                       ),
                       subtitle: Text(
-                        '123 Agriculture Street\nFarm City, FC 12345\nCountry',
+                        'address'.tr(),
                       ),
                     ),
                   ],
@@ -144,21 +144,21 @@ class HelpSupportPage extends StatelessWidget {
                   children: [
                     Container(
                       padding: const EdgeInsets.all(16),
-                      child: const Column(
+                      child:  Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'FAQs',
-                            style: TextStyle(
+                            'faqs'.tr(),
+                            style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                               color: kPrimaryGreen,
                             ),
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           Text(
-                            'Find quick answers to common questions',
-                            style: TextStyle(
+                            'faqsDesc'.tr(),
+                            style: const TextStyle(
                               fontSize: 14,
                               color: Colors.grey,
                             ),
@@ -170,9 +170,9 @@ class HelpSupportPage extends StatelessWidget {
                     ListTile(
                       leading: const Icon(Icons.question_answer,
                           color: kPrimaryGreen),
-                      title: const Text(
-                        'View FAQs',
-                        style: TextStyle(fontWeight: FontWeight.w500),
+                      title:  Text(
+                        'viewFaqs'.tr(),
+                        style: const TextStyle(fontWeight: FontWeight.w500),
                       ),
                       trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                       onTap: () {
